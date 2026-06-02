@@ -211,6 +211,17 @@ echo "dir1 dir2 dir3" | xargs -n 1 mkdir       # create 3 directories
 
 # -n 1 = run command once per item (most useful)
 # without -n = pass everything at once (default)
+
+# xargs -n 1 — one argument at a time
+echo "lisa linda lori" | xargs -n 1 useradd    # safe
+echo "lisa linda lori" | xargs useradd          # error — useradd can't handle multiple args
+
+# Commands that NEED -n 1
+useradd, userdel, usermod    # user management
+passwd                        # password setting
+
+# Commands that DON'T need -n 1
+mkdir, rm, chmod, chown, grep, wc    # handle multiple args natively
 ```
 
 ### which, locate, file
