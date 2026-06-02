@@ -76,6 +76,7 @@ symlink.txt ──────► "original.txt" ──────► inode #42
 ### Why hard links cannot point to directories
 
 If hard links to directories were allowed, this could happen:
+
 /home/user/documents/ ──────► inode #50
 └── loop/ ───────────────► inode #50  (points back to itself)
 
