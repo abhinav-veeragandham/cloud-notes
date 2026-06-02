@@ -203,6 +203,16 @@ find /etc -type f | xargs grep "192.168.1.100"          # find IP in configs
 find /etc -name "*.conf" -printf '%s, %p\n' | sort -rn  # audit config sizes
 ```
 
+### xargs
+'''bash
+# xargs -n flag — control arguments per command
+echo "lisa linda lori" | xargs -n 1 useradd    # create 3 users
+echo "dir1 dir2 dir3" | xargs -n 1 mkdir       # create 3 directories
+
+# -n 1 = run command once per item (most useful)
+# without -n = pass everything at once (default)
+'''
+
 ### which, locate, file
 ```bash
 # which — finds executable binaries in PATH only
